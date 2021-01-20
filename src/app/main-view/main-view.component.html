@@ -1,0 +1,34 @@
+<div id="main-view-body" class="h-100 d-flex flex-column overflow-hidden">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<span class="navbar-brand">Navbar</span>
+		<button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-label="Toggle navigation"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+		<div class="collapse navbar-collapse" id="navbarContent" [collapse]="isCollapsed" [isAnimated]="true">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item" routerLinkActive="active">
+					<a class="nav-link" routerLink="/landing">Landing</a>
+				</li>
+				<li class="nav-item" routerLinkActive="active">
+					<a class="nav-link" routerLink="/main/next">Next</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="flex-grow-1 overflow-auto">
+		<router-outlet id="main-view-outlet" name="primary"></router-outlet>
+	</div>
+	<div class="main-view-footer">
+		<div class="h1 mb-0 bg-dark">footer</div>
+	</div>
+</div>
